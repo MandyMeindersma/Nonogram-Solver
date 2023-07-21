@@ -1,7 +1,4 @@
-package src;
-
-import src.Board;
-
+package src.main;
 
 
 public class Main {

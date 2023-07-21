@@ -1,8 +1,5 @@
-package src;
+package src.main;
 
-import src.CellTypes;
-
-import java.sql.SQLOutput;
 import java.util.Arrays;
 
 public class Board {
@@ -43,8 +40,24 @@ public class Board {
             visualize();
         }
 
-        if (numbers == 7) {
+        int numberOfSpacesBetweenFilledAreas = String.valueOf(numbers).length() - 1;
+        int numberOfFilledSpaces = sumOfDigits(numbers);
+
+        if (numberOfFilledSpaces + numberOfSpacesBetweenFilledAreas == size) {
             System.out.println("made to 7");
         }
+    }
+
+    public int sumOfDigits(int numbers) {
+        int sum = 0;
+        int numberToAdd;
+        while (numbers > 0) {
+            numberToAdd = numbers % 10;
+            sum = sum + numberToAdd;
+            numbers = numbers / 10;
+        }
+        sum = sum + numbers;
+
+        return sum;
     }
 }
