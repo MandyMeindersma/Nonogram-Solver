@@ -44,7 +44,7 @@ public class Board {
         int numberOfFilledSpaces = sumOfDigits(numbers);
 
         if (numberOfFilledSpaces + numberOfSpacesBetweenFilledAreas == size) {
-            System.out.println("made to 7");
+            System.out.println("made it to knowing how to fill the board");
         }
     }
 
