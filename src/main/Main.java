@@ -19,6 +19,8 @@ public class Main {
 
         boolean horizontalInput = true;
 
+        int index = 0;
+
 
         for (String val : args) {
             int numbers = -1;
@@ -27,19 +29,22 @@ public class Main {
 
                 for (String horizontalValue : horizontalValues) {
                     numbers = Integer.valueOf(horizontalValue.toString());
-                    board.logic(numbers);
+                    board.logic(numbers, Board.LineType.COLUMN, index % BOARD_SIZE);
+                    index += 1;
                 }
             }
 
             if (!horizontalInput) {
                 numbers = Integer.valueOf(val.toString());
-                board.logic(numbers);
+                board.logic(numbers, Board.LineType.ROW, index % BOARD_SIZE);
             }
             horizontalInput = false;
+            index += 1;
 
 
         }
 
+        board.visualize();
     }
 
     public static boolean validateInput(String[] args) {
